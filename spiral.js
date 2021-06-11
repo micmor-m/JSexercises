@@ -24,30 +24,35 @@ function spiral(n){
       spiralArr[startRow][i] = value
       value++;
     }
+    if (value > n * n) {
+      return spiralArr;
+    }
     startRow++;
-    console.log(spiralArr)
-    console.log("Outside", value)
     // Loop last column
     for (let i = startRow; i < endRow; i++){
-      console.log("Inside", value)
       spiralArr[i][endColumn] = value
       value++;
     }
+    if (value > n * n) {
+      return spiralArr;
+    }
     endColumn--;
-    endRow--;
-    console.log(spiralArr)
     // Loop last row
     for (let i = endColumn; i >= startColumn; i--){
-      spiralArr[endRow][i] = value
+      spiralArr[endRow-1][i] = value
       value++;
     }
+    if (value > n * n) {
+      return spiralArr;
+    }
     endRow--;
-    console.log("startColumn", startColumn);
-    console.log(spiralArr)
     // Loop first column
-    for (let i = endRow ; i >= startRow; i--){
+    for (let i = endRow  - 1; i >= startRow; i--){
       spiralArr[i][startColumn] = value
       value++;
+    }
+    if (value > n * n) {
+      return spiralArr;
     }
     startColumn++;
   }
@@ -56,4 +61,4 @@ function spiral(n){
 }
 
 
-console.log(spiral(4))
+console.log(spiral(10))
