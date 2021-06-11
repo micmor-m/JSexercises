@@ -2,12 +2,7 @@
 
 function spiral(n) {
   const spiralArr = [];
-  // const singleArr = [];
-  // // Create singleArray with all 0
-  // for (let i = 0; i < n; i++) {
-  //   singleArr.push(0);
-  // }
-  //Create spiralArr with all 0
+  //Create spiralArr with all null
   for (let i = 0; i < n; i++) {
     spiralArr.push([]);
   }
