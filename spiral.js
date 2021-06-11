@@ -19,17 +19,11 @@ function spiral(n) {
       spiralArr[startRow][i] = value;
       value++;
     }
-    if (value > n * n) {
-      return spiralArr;
-    }
     startRow++;
     // Loop last column
     for (let i = startRow; i < endRow; i++) {
       spiralArr[i][endColumn] = value;
       value++;
-    }
-    if (value > n * n) {
-      return spiralArr;
     }
     endColumn--;
     // Loop last row
@@ -37,17 +31,11 @@ function spiral(n) {
       spiralArr[endRow - 1][i] = value;
       value++;
     }
-    if (value > n * n) {
-      return spiralArr;
-    }
     endRow--;
     // Loop first column
     for (let i = endRow - 1; i >= startRow; i--) {
       spiralArr[i][startColumn] = value;
       value++;
-    }
-    if (value > n * n) {
-      return spiralArr;
     }
     startColumn++;
   }
