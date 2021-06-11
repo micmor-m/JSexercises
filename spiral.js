@@ -1,27 +1,27 @@
 // A function that accepts an integer N > 0 and return a N x N spiral matrix
 
-function spiral(n){
-  const spiralArr= [];
-  const singleArr = [];
-  // Create singleArray with all 0
-  for (let i = 0; i < n; i++) {
-    singleArr.push(0)
-  }
+function spiral(n) {
+  const spiralArr = [];
+  // const singleArr = [];
+  // // Create singleArray with all 0
+  // for (let i = 0; i < n; i++) {
+  //   singleArr.push(0);
+  // }
   //Create spiralArr with all 0
   for (let i = 0; i < n; i++) {
-    spiralArr.push([...singleArr])
+    spiralArr.push([]);
   }
-  
+
   let startColumn = 0;
   let endColumn = n - 1;
-  let startRow = 0; 
+  let startRow = 0;
   let endRow = n;
   let value = 1;
 
-  while(startColumn <= endColumn && startRow <= endRow){
+  while (startColumn <= endColumn && startRow <= endRow) {
     // Loop first row
-    for (let i = startColumn; i <= endColumn; i++){
-      spiralArr[startRow][i] = value
+    for (let i = startColumn; i <= endColumn; i++) {
+      spiralArr[startRow][i] = value;
       value++;
     }
     if (value > n * n) {
@@ -29,8 +29,8 @@ function spiral(n){
     }
     startRow++;
     // Loop last column
-    for (let i = startRow; i < endRow; i++){
-      spiralArr[i][endColumn] = value
+    for (let i = startRow; i < endRow; i++) {
+      spiralArr[i][endColumn] = value;
       value++;
     }
     if (value > n * n) {
@@ -38,8 +38,8 @@ function spiral(n){
     }
     endColumn--;
     // Loop last row
-    for (let i = endColumn; i >= startColumn; i--){
-      spiralArr[endRow-1][i] = value
+    for (let i = endColumn; i >= startColumn; i--) {
+      spiralArr[endRow - 1][i] = value;
       value++;
     }
     if (value > n * n) {
@@ -47,8 +47,8 @@ function spiral(n){
     }
     endRow--;
     // Loop first column
-    for (let i = endRow  - 1; i >= startRow; i--){
-      spiralArr[i][startColumn] = value
+    for (let i = endRow - 1; i >= startRow; i--) {
+      spiralArr[i][startColumn] = value;
       value++;
     }
     if (value > n * n) {
@@ -57,8 +57,7 @@ function spiral(n){
     startColumn++;
   }
 
- return spiralArr;
+  return spiralArr;
 }
 
-
-console.log(spiral(10))
+console.log(spiral(10));
